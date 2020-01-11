@@ -1,10 +1,11 @@
-# configman
-读取ini文件，生成子类配置文件，可以使用语法conf.a.b.c来配置项目
+# configboy
+> 读取ini文件，添加到config.py的全局变量
+
+## 安装
+> pip install configboy
 
 ## 使用
-直接运行build_config.py文件会读取当前文件夹的base.config.ini配置信息，然后生成config.py文件。
-运行test.py文件，可以看到调用的实例。
+> 只在需要配置文件的地方，运行命令configboy。在当前目录下会生成config.ini文件和config.py文件。运行项目的时候，需要添加选择配置的参数。试着运行 python config.py configboy.dev.api 看看。项目引用配置的时候，直接import config，config.username 进行使用。
 
-## 关于
-要是使用dict，修改dict的行为也可以做到，点语法的功能。但是，没有办法完全对照ini的语法信息。
-所以，使用了类继承的方法实现了这个功能。（其实，当时压根没有想起python的魔法方法可以实现这个功能）
+## 工作过程
+> 配置的名称会以点分割，然后会覆盖前者的配置。例如：configboy.dev.api 会覆盖 configboy.dev的配置，configboy.dev会覆盖configboy的配置。
