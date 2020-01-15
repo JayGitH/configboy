@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="configboy",
-    version="0.1.4",
+    version="0.1.7",
     description=("config library"),
     #license="MIT Licence",
     url="http://test.com",
@@ -13,13 +13,13 @@ setup(
     install_requires=['requests'],
     entry_points={
         'console_scripts': [
-            'configboy = configboy.run:main',
+            'configboy demo = configboy.run:main',
         ]
     }
 )
 
 # todo 打包命令 python setup.py bdist_wheel
-
+# todo python setup.py sdist upload -r pypi
 # if __name__ == '__main__':
 #     setup(
 #         name="configman",
